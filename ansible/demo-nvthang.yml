@@ -1,0 +1,5 @@
+#Incluing an axample of how to use role ( for instance, with variables passed in as parmaeters) is always nice for users too:
+
+- hosts: localhost
+  roles:
+    - { role: '/root/tmp/nvthang_linux/nvthang.install' }

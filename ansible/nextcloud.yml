@@ -1,0 +1,3 @@
+- hosts: cloud
+  roles:
+    - { role: rbicker.nextcloud, nextcloud_domain: nextcloud.vnu.edu.vn }

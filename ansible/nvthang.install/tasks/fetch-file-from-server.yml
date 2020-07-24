@@ -1,0 +1,15 @@
+---
+# tasks file for nvthang.copy
+- name: Fetch file from server to localhost
+  fetch:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    flat: yes 
+
+  with_items:
+    - { src: '/tmp/flockfile.nvthang', dest: '/home/thangpc/Desktop/flockfile.txt' }
+      # - { src: '~/testdir2/test1.txt', dest: '/tmp/a.txt'}
+      # - { src: '~/testdir2/test1.txt', dest: '/tmp/a.txt'}
+      #
+      #
+#flat: yes to make ansible fetch the files directly into the /tmp diectory. However, filenames must be uniques for this to work, so it's not as uuseful when copying own down files from multiple hosts. Only use flat=yes if you're copyong files from a single host.

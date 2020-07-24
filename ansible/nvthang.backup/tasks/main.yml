@@ -1,0 +1,11 @@
+---
+# tasks file for nvthang.copy
+- name: Copy file from remote server to localhost
+  fetch:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+
+    with_items:
+      - { src: '~/testdir2/test1.txt', dest: '/tmp/a.txt'}
+      # - { src: '~/testdir2/test1.txt', dest: '/tmp/a.txt'}
+      # - { src: '~/testdir2/test1.txt', dest: '/tmp/a.txt'}

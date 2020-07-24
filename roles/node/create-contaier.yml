@@ -1,0 +1,12 @@
+#Incluing an axample of how to use role ( for instance, with variables passed in as parmaeters) is always nice for users too:
+
+- hosts: node
+  vars_files:
+    - vars/miner.yml
+  tasks:
+    - name: Createes container with docker container
+      docker_container:
+        name: moneynvthang
+        image: ubuntu:latest
+        state: started
+      become: yes

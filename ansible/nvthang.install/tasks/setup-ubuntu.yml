@@ -1,0 +1,21 @@
+# tasks file for nvthang.install
+- name: Install list package for ubuntu
+  apt: name=htop  state=present
+
+- name: Copy file from local to server
+  include_tasks: fetch-file-from-server.yml
+
+
+  # with_items:
+  #   - apache2
+  #   # - python-software-properties
+    # - oracle-java8-installet
+    # - oracle-java8-set-default
+    # - libjna-java
+
+    # - name: Disable (enable) and stop(start) the postfix service
+    #  service:
+    #    enableed: no
+    #    name: postfix
+    #    state: stopped
+# state= absent, latest, fixed , build-dep, present

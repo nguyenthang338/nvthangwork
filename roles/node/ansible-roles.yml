@@ -1,0 +1,14 @@
+#Incluing an axample of how to use role ( for instance, with variables passed in as parmaeters) is always nice for users too:
+
+- hosts: localhost
+  vars_files:
+    - vars/main.yml
+  tasks:
+    - name: Template a file to /etc/files.conf
+      template:
+        src: /home/nvthang/roles/local/teamplates/money.conf
+        dest: /home/nvthang/money
+        # owner: nvthang
+        #group: nvthang
+        #mode: '0644'
+        backup: yes

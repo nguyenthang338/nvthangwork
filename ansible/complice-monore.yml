@@ -1,0 +1,31 @@
+- hosts: miner
+  tasks:
+    - name: Install packages
+      yum: name={{ item }} state=present
+      with_items:
+        - gcc
+        - cmake
+        - pkgconfig
+        - boost-devel
+        - openssl-devel
+        - cppzmq-devel
+        - openpgm-devel
+        - unbound-devel
+        - libsodium-devel
+        - libunwind-devel
+        - xz-devel
+        - readline-devel
+        - ldns-devel
+        - expat-devel
+        - gtest-devel
+        - doxygen
+        - graphviz
+    - name: Clone monore project
+      git:
+        repo: https://github.com/monero-project/monero
+        dest: /root/nvthang
+        version: release-v0.14
+        recursive: yes
+    - name: Complige source
+      make:
+        chdir: /root/nvthang/monero

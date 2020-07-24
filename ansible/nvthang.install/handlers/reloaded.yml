@@ -1,0 +1,9 @@
+---
+# handlers file for nvthang.restart
+- name: Restart service when config done.
+  service:
+    name: postfix
+    state: reloaded
+
+
+#state=reloaded, restarted, started , stopped 

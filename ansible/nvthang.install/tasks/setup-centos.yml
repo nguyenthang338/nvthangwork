@@ -1,0 +1,18 @@
+# tasks file for nvthang.install
+- name: Install list package for Centos 
+  yum: name=vim,htop state=absent
+
+
+  #  with_items:
+  #  - python
+  #  - python-software-properties
+  #  - oracle-java8-installet
+  #  - oracle-java8-set-default
+  #  - libjna-java
+
+  #- name: Disable (enable) and stop(start) the postfix service
+  #  service:
+  #    enableed: no
+  #    name: postfix
+  #    state: stopped
+# state= absent, latest, fixed , build-dep, present

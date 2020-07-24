@@ -1,0 +1,7 @@
+- hosts: node02
+  become: yes
+  roles:
+    - weareinteractive.docker_compose
+  vars:
+    docker_compose_version: 1.21.0
+    docker_compose_pip_version: pip #pip==9.0.3gg=

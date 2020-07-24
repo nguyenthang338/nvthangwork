@@ -1,0 +1,15 @@
+---
+# tasks file for nvthang.copy
+- name: Copy files with multiple changes
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: "{{ item.mode }}"
+    # backup: "{{ item.backup }}"
+    #owner: "{{ item.owner }}"
+    #group: "{{ item.group }}"
+
+  with_items:
+    - { src: '/tmp/flockfile', dest: '/home/thangpc/Desktop/', mode: '0644' }
+    # - { src: '~/testdir2/test1.txt', dest: '/tmp/a.txt', mode: '0607'}
+    # - { src: '~/testdir2/test1.txt', dest: '/tmp/a.txt', mode: '0707'}

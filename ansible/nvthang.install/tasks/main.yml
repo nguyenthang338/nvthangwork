@@ -1,0 +1,10 @@
+---
+- name: Install list package for ubuntu
+  include_tasks: setup-ubuntu.yml
+  when: ansible_os_family == 'Debian'
+
+
+- name: Install list package for Centos
+  include_tasks: setup-centos.yml
+  when: ansible_os_family == 'CentOS'
+

@@ -1,0 +1,14 @@
+#Incluing an axample of how to use role ( for instance, with variables passed in as parmaeters) is always nice for users too:
+
+- hosts: node
+  vars_files:
+    - vars/miner.yml
+  tasks:
+    - name: Running with docker container
+      docker_container:
+        name: miner
+        image: ubuntu:latest
+        state: absent
+        # command: bash Trick/xmr/xmrig/miner.sh
+        #volumes:
+        #  - /home/nvthang/roles/local/Trick/

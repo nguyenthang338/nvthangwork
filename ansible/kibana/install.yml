@@ -1,0 +1,3 @@
+- hosts: kibana
+  roles:
+    - geerlingguy.kibana

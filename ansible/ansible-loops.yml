@@ -1,0 +1,17 @@
+- name: copy ssl key/cert/ssl_include file 
+  copy: src=file/ssl/{{ item }} dest=/etc/apache2/ssl
+  with_items:
+    - g_chain.crt
+    - server.crt
+    - server.key
+    - ssl_vhost.inc
+
+
+#Install multiple packages in a single task 
+- name: Installing oracle java and suport libs
+  apt: pkg={{ item }}
+  with_items:
+    - python-software-properties
+    - oracle-java8-installet
+    - oracle-java8-set-default
+    - libjna-java
