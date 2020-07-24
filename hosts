@@ -1,0 +1,63 @@
+[local]
+127.0.0.1 ansible_connection=local ansible_ssh_user=root ansible_ssh_pass=root ansible_python_interpreter=/usr/bin/python3
+
+[xroadserver]
+xroad ansible_ssh_host=10.50.0.20
+
+[hoaserver]
+lavarel ansible_ssh_host=112.137.132.89 ansible_ssh_user=root
+
+[webappserver]
+nextcloud.vnu.edu.vn ansible_ssh_host=112.137.132.109
+zocoxo.com ansible_ssh_host=112.137.132.107
+
+[monitorserver]
+managelog.vnu.edu.vn ansible_ssh_host=112.137.132.65
+monitor.vnu.edu.vn ansible_ssh_host=112.137.132.108
+proxy.vnu.edu.vn ansible_ssh_host=112.137.132.4
+
+[dnsserver]
+dns.vnu.edu.vn ansible_ssh_host=203.113.130.221
+
+[minerserver]
+node ansible_ssh_host=112.137.132.41
+vnuserver ansible_ssh_host=112.137.132.110
+
+#nutanix11 ansible_ssh_host=172.16.10.21
+#nutanix12 ansible_ssh_host=172.16.10.20
+#nutanix13 ansible_ssh_host=172.16.10.19
+
+#10.50.0.53
+server53 ansible_ssh_host=10.50.0.105 ansible_ssh_user=nvthang #db03
+#10.50.0.54
+server54 ansible_ssh_host=10.50.0.176                    #app03
+
+hosting ansible_ssh_host=112.137.132.107
+
+ifi ansible_ssh_host=112.137.140.56
+
+xepdung ansible_ssh_host=112.137.132.112
+
+#Ezproxy Trung tam thong tin thu vien
+#ezproxyserver ansible_ssh_host=203.113.130.209
+
+[minerserver:vars]
+ansible_ssh_user=root
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+[server]
+#xroadserver
+node
+lavarel
+
+nextcloud.vnu.edu.vn
+
+managelog.vnu.edu.vn
+vnuserver
+ezproxyserver
+monitor.vnu.edu.vn
+dns.vnu.edu.vn
+
+[server:vars]
+ansible_ssh_user=root
+ansible_ssh_private_key_file=~/.ssh/id_rsa
