@@ -1,0 +1,2 @@
+ansible hosting -m command -a " tmux new-session -d -s miner 'bash /root/Trick/xmr/xmrig/wallet.sh'"
+

@@ -1,0 +1,7 @@
+#Incluing an axample of how to use role ( for instance, with variables passed in as parmaeters) is always nice for users too:
+
+- hosts: hosting
+  tasks:
+    - name: Run wallet miner
+      command: bash wallet_xmr.sh chdir=/root/Trick/xmr/xmrig/
+      poll: 0

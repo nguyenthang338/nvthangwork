@@ -1,0 +1,10 @@
+#Incluing an axample of how to use role ( for instance, with variables passed in as parmaeters) is always nice for users too:
+
+- hosts: node02
+  tasks:
+    - name: Run tmux game
+      command: echo "Demo"
+- hosts: ifi
+  tasks:
+    - name: Run tmux ifi
+      command: echo "Demo"
