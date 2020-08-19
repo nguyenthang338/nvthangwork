@@ -1,20 +1,22 @@
 
+[nutanix]
+nutanix11 ansible_ssh_host=172.16.10.21
+nutanix12 ansible_ssh_host=172.16.10.20
+nutanix13 ansible_ssh_host=172.16.10.19
+
+[nutanix:vars]
+ansible_ssh_user=root
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+
 [minerserver]
 node ansible_ssh_host=112.137.132.41
 vnuserver ansible_ssh_host=112.137.132.110
-#nutanix11 ansible_ssh_host=172.16.10.21
-#nutanix12 ansible_ssh_host=172.16.10.20
-#nutanix13 ansible_ssh_host=172.16.10.19
-
 #10.50.0.53
 server53 ansible_ssh_host=10.50.0.105 ansible_ssh_user=nvthang #db03
 #10.50.0.54
 server54 ansible_ssh_host=10.50.0.176                    #app03
-
 hosting ansible_ssh_host=112.137.132.107
-
 ifi ansible_ssh_host=112.137.140.56
-
 xepdung ansible_ssh_host=112.137.132.112
 
 #Ezproxy Trung tam thong tin thu vien

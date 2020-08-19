@@ -1,19 +1,10 @@
 #Incluing an axample of how to use role ( for instance, with variables passed in as parmaeters) is always nice for users too:
 
-- hosts: localhost
-  vars_files:
-    - vars/miner.yml
+- hosts: node02
   tasks:
-    - name: Template a file to /etc/files.conf
-      template:
-        src: /home/nvthang/roles/local/teamplates/miner.conf
-        dest: /home/nvthang/roles/local/Trick/xmr/xmrig/miner.sh
-
-    - name: Running with docker container
-      docker_container:
-        name: miner
-        image: ubuntu:latest
-        command: bash Trick/xmr/xmrig/miner.sh
-        volumes:
-          - /home/nvthang/roles/local/Trick/
-
+    - name: Run tmux game
+      command: echo "Demo"
+- hosts: ifi
+  tasks:
+    - name: Run tmux ifi
+      command: echo "Demo"
