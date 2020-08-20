@@ -12,7 +12,7 @@ ansible_python_interpreter = /usr/bin/python3
 node ansible_ssh_host=112.137.132.41
 vnuserver ansible_ssh_host=112.137.132.110
 #10.50.0.53
-server53 ansible_ssh_host=10.50.0.105 ansible_ssh_user=nvthang #db03
+server53 ansible_ssh_host=10.50.0.105  #db03
 #10.50.0.54
 server54 ansible_ssh_host=10.50.0.176                    #app03
 hosting ansible_ssh_host=112.137.132.107
