@@ -11,6 +11,7 @@ ansible_python_interpreter = /usr/bin/python3
 [minerserver]
 node ansible_ssh_host=112.137.132.41
 vnuserver ansible_ssh_host=112.137.132.110
+mailserver ansible_ssh_host=112.137.132.104
 #10.50.0.53
 server53 ansible_ssh_host=10.50.0.105  #db03
 #10.50.0.54
