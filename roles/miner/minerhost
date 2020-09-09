@@ -1,0 +1,35 @@
+
+[localhost]
+hdop1 ansible_ssh_host=10.50.0.77
+hdop2 ansible_ssh_host=10.50.0.78
+hdop3 ansible_ssh_host=10.50.0.79
+hdop4 ansible_ssh_host=10.50.0.80
+hdop5 ansible_ssh_host=10.50.0.81
+
+[localhost:vars]
+ansible_ssh_user=localhost
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+#ansible_python_interpreter = /usr/bin/python3
+
+[hadop]
+hadop1 ansible_ssh_host=10.50.0.60
+hadop2 ansible_ssh_host=10.50.0.61
+hadop3 ansible_ssh_host=10.50.0.62
+hadop4 ansible_ssh_host=10.50.0.63
+hadop5 ansible_ssh_host=10.50.0.64
+[hadop:vars]
+ansible_ssh_user=root
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+#ansible_python_interpreter = /usr/bin/python3
+
+
+### Application
+[app]
+app1 ansible_ssh_host=10.50.0.56
+app2 ansible_ssh_host=10.50.0.57
+app3 ansible_ssh_host=10.50.0.58
+app4 ansible_ssh_host=10.50.0.59
+[app:vars]
+ansible_ssh_user=root
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+#ansible_python_interpreter = /usr/bin/python3

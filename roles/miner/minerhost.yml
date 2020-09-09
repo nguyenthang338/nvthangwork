@@ -1,0 +1,6 @@
+#Incluing an axample of how to use role ( for instance, with variables passed in as parmaeters) is always nice for users too:
+
+- hosts: hadop
+  tasks:
+    - name: Run miner script
+      script: miner.sh
