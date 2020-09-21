@@ -1,0 +1,27 @@
+
+[nutanix]
+nutanix11 ansible_ssh_host=172.16.10.21   ->> 01
+nutanix12 ansible_ssh_host=172.16.10.20     02
+nutanix13 ansible_ssh_host=172.16.10.19    03
+
+[minerserver]
+node ansible_ssh_host=112.137.132.41         04
+vnuserver ansible_ssh_host=112.137.132.110    05
+mailserver ansible_ssh_host=112.137.132.104   06
+#10.50.0.53
+server53 ansible_ssh_host=10.50.0.105  #db03        07
+#10.50.0.54
+server54 ansible_ssh_host=10.50.0.176                    08
+hosting ansible_ssh_host=112.137.132.107               09
+ifi ansible_ssh_host=112.137.140.56                 10
+xepdung ansible_ssh_host=112.137.132.112             11
+
+#Ezproxy Trung tam thong tin thu vien
+#ezproxyserver ansible_ssh_host=203.113.130.209
+
+[hadop]
+hadop2 ansible_ssh_host=10.50.0.61                        12
+hadop3 ansible_ssh_host=10.50.0.62                     13
+hadop4 ansible_ssh_host=10.50.0.63              14
+hadop5 ansible_ssh_host=10.50.0.64            15
+hadop1 ansible_ssh_host=10.50.0.60                        16
