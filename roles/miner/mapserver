@@ -28,4 +28,4 @@ hadop1 ansible_ssh_host=10.50.0.60                        16
 
 nextcloud.vnu.edu.vn      112.137.132.109            17
 mailserver-BAckup      112.137.132.201            18
-
+zimbra server  172.16.6.166                  19
