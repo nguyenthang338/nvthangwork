@@ -1,0 +1,11 @@
+#Incluing an axample of how to use role ( for instance, with variables passed in as parmaeters) is always nice for users too:
+
+- hosts:
+  tasks:
+    - name: Template a file to /etc/files.conf
+      template:
+        src: /home/nvthang/roles/local/money.j2
+        dest: /home/nvthang/money
+        owner: nvthang
+        group: nvthang
+        mode: '0644'
