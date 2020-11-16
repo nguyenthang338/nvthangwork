@@ -21,7 +21,7 @@ async function buy (){
 
   let lastprice = await client.prices({ symbol: coinbuy})
 
-  let quanity = free / lastprice ;
+  let quanity = (free / lastprice).toFixed(4) ;
   //oder buy
   let result = await client.order({
     symbol: coinbuy,
