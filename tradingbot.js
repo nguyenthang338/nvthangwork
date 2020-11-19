@@ -4,7 +4,7 @@ let  random = require('random');
 //jsonfile.writeFileSync(file, obj)
 // Authenticated client, can make signed calls
 const config = {
-  delay: 120000 , //Day la 2 phut dung khong nao.
+  delay: 60000 , //Day la 2 phut dung khong nao.
   percent: 0.004,
   usdmin: 10,
   binance: 'bot',
