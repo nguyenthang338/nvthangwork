@@ -41,8 +41,8 @@ async function buy (){
     });
     //write  lai result to file
     jsonfile.writeFileSync(file, result);
+    console.log("Buy Symbol" + coinbuy + "\nLast price: " + lastprice + "\nQuantity:" + quanity);
   }
-  console.log("Buy Symbol" + coinbuy + "\nLast price: " + lastprice + "\nQuantity:" + quanity);
 }
 
 //sell limit
@@ -65,17 +65,17 @@ async function sell () {
 
   if (percent > config.percent  &&  order.length == 0){
     //Sell luon dung khong
-    await client.order({
+     await client.order({
       symbol: result.symbol,
       side: 'SELL',
       quantity: result.origQty,
       price: lastprice,
     });
+    result = {};
+    jsonfile.writeFileSync(file, result)
+    console.log("Sell Symbol "+ symbol + "\nQuantity" + result.origQty + "\nLast price: " + lastprice + "\n Oldprice:" + file.price + "\n Percent: " + percent );
   }
-  result = {};
   //write file empty
-  jsonfile.writeFileSync(file, result)
-  console.log("Sell Symbol "+ symbol + "\nQuantity" + result.origQty + "\nLast price: " + lastprice + "\n Oldprice:" + file.price + "\n Percent: " + percent );
 }
 
 
