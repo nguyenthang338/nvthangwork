@@ -1,13 +1,11 @@
 let  Binance = require ('binance-api-node').default;
-const random = require('random');
-const jsonfile = require('jsonfile');
-const filedir = './data.json'
+let  random = require('random');
 
 //jsonfile.writeFileSync(file, obj)
 // Authenticated client, can make signed calls
 const config = {
   delay: 120000 , //Day la 2 phut dung khong nao.
-  percent: 0.4,
+  percent: 0.004,
   usdmin: 10,
   binance: 'bot',
 }
@@ -17,6 +15,9 @@ const client = Binance({
 })
 
 
+
+let jsonfile = require('jsonfile');
+let file = './data.json'
 
 async function buy (){
   let ArrayCoin = ['XMRUSDT','LTCUSDT','DOGEUSDT','XRPUSDT','BCHUSDT','EOSUSDT']
@@ -28,20 +29,20 @@ async function buy (){
   let free = usdt.free;
 
   let lastprice = await client.prices({ symbol: coinbuy})
-
+  let quanity = 0;
   if ( usdt > config.usdmin ){
-    let quanity = (free / lastprice).toFixed(4) ;
-  //oder buy
-  let result = await client.order({
-    symbol: coinbuy,
-    side: 'BUY',
-    quantity: quanity,
-    price: lastprice,
-  }),
+    quanity = (free / lastprice).toFixed(4) ;
+    //oder buy
+    let result = await client.order({
+      symbol: coinbuy,
+      side: 'BUY',
+      quantity: quanity,
+      price: lastprice,
+    });
     //write  lai result to file
-    jsonfile.writeFileSync(file, result)
+    jsonfile.writeFileSync(file, result);
   }
-  console.log("Buy Symbol" + coinbuy + "\tLast price: " + lastprice + "Quantity:" + quanity);
+  console.log("Buy Symbol" + coinbuy + "\nLast price: " + lastprice + "\nQuantity:" + quanity);
 }
 
 //sell limit
@@ -52,27 +53,35 @@ async function sell () {
   let lastprice = await client.prices({ symbol: result.symbol})
   let percent = 0 ;
   if (lastprice > file.price ){
-     percent = lastprice / file.price - 1;
+    percent = lastprice / file.price - 1;
   }else {
     percent = 0;
   }
-  if (percent > config.percent ){
+
+
+  let order =  await client.openOrders({
+    symbol: result.symbol,
+  });
+
+  if (percent > config.percent  &&  order.length == 0){
     //Sell luon dung khong
     await client.order({
       symbol: result.symbol,
       side: 'SELL',
       quantity: result.origQty,
       price: lastprice,
-    }),
+    });
   }
   result = {};
   //write file empty
   jsonfile.writeFileSync(file, result)
-  console.log("Sell Symbol "+ symbol + "Quantity" + result.origQty + "\tLast price: " + lastprice + "\t Oldprice:" + file.price + "\t Percent: " + percent );
+  console.log("Sell Symbol "+ symbol + "\nQuantity" + result.origQty + "\nLast price: " + lastprice + "\n Oldprice:" + file.price + "\n Percent: " + percent );
 }
 
-function order {
-    buy () ;
-    sell () ;
+
+async function order() {
+  buy () ;
+  sell () ;
 }
+
 setInterval (order, config.delay );
